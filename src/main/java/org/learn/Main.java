@@ -22,6 +22,7 @@ public class Main {
 
         Dataset<Row> dataFrame = spark.read().format("hudi").load("s3a://beambucket/BeamFolder/");
         dataFrame.show(false);
+        System.out.println("the count is: "+dataFrame.count());
 
 
         spark.stop();
